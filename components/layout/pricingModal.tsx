@@ -60,14 +60,14 @@ const PricingModal = ({
 
         </div>
 
-        <div  hidden className="h-0 dark:bg-slate-800 flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-5">
+        <div hidden className="h-0 dark:bg-slate-800 flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-5">
 
-      
-                        
-                        <input type='text ' className="h-0">
 
-                        </input>
-                        
+
+          <input type='text ' className="h-0">
+
+          </input>
+
 
         </div>
       </div>

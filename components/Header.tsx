@@ -47,7 +47,7 @@ export default function Header(
         >
           Showcase
         </motion.button> */}
-  
+
 
       <div>
 
@@ -61,13 +61,13 @@ export default function Header(
         </motion.button>
 
 
-        {/* <motion.button
+        <motion.button
           className="text-black dark:text-white rounded-full text-3xl border border-black bg-white dark:bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white dark:border-white hover:text-black"
           onClick={() => setShowSignInModal(true)}
           {...FADE_IN_ANIMATION_SETTINGS}
         >
           Login
-        </motion.button> */}
+        </motion.button>
       </div>
     </header>
   );

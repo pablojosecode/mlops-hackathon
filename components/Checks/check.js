@@ -29,10 +29,10 @@ const check = () => {
                     console.log("FUCK ERROR")
                 } else {
                     if (process.env.NODE_ENV === "development") {
-                        window.open("http://localhost:3000/User","_self")
+                        window.open("http://localhost:3000/chat", "_self")
                     }
-                    else{
-                        window.open("https://vocalaifrontend.vercel.app/User", "_self")
+                    else {
+                        window.open("https:///User", "_self")
                     }
                     console.log("FUCK SUCCESS")
                 }

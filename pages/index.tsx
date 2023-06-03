@@ -75,18 +75,18 @@ const Home: NextPage = () => {
   ]
 
 
-  // useEffect(() => {
-  //   // Your code here
-  //   check();
+  useEffect(() => {
+    // Your code here
+    check();
 
-  // }, []);
+  }, []);
 
 
   return (
     <GoogleOAuthProvider clientId="45408313407-q6jsic6d271qhjh76t6rfpg8c3nljj9n.apps.googleusercontent.com">
 
-      <div className="w-screen dark:bg-[#080708] pb-10 ">
-        <div className="flex  max-w-[100rem] mx-auto flex-col items-center justify-center py-2 ">
+      < div className="relative w-screen dark:bg-[#080708] pb-10 ">
+        <div className=" flex  max-w-[100rem] mx-auto flex-col items-center justify-center py-2 ">
           <motion.div
             className="max-w-full xl:px-0"
             initial="hidden"
@@ -109,6 +109,13 @@ const Home: NextPage = () => {
             </Head>
             <PricingModal />
             <FaqModal />
+            <Image
+              alt="robot clipart"
+              height={100}
+              width={100}
+              className="absolute z-0 h-[30rem] w-[30rem] left-96 top-72"
+              src="/clipart.png"
+            />
 
             <Header setShowFaqModal={setShowFaqModal} SignInModal={SignInModal} setShowSignInModal={setShowSignInModal} />
 
@@ -120,7 +127,7 @@ const Home: NextPage = () => {
                 rel="noreferrer"
                 className="border dark:text-slate-200 rounded-2xl py-1 px-4 text-slate-500 text-md mb-5 hover:scale-105 transition duration-300 ease-in-out"
               >
-                Used by over <span className="font-semibold">1,000</span> beautiful
+                Used by over <span className="font-semibold">1,000</span> beautifuls
                 users
               </a> */}
 
@@ -147,9 +154,11 @@ const Home: NextPage = () => {
 
             </div>
             <div className="flex justify-center pt-5 ">
-              <motion.div className="flex h-[23rem] w-3/4 max-w-7xl bg-blue-100 rounded-[40rem]">
+              <motion.div
+                onClick={() => setShowSignInModal(true)}
+                whileHover={{ rotateX: 1, scale: 1.01 }} className="cursor-pointer flex h-[23rem] w-3/4 max-w-7xl bg-white rounded-[40rem]">
 
-                <p className="pt-20  w-full text-center  text-8xl mt-10">Log in now.</p>
+                <p className="my-auto px-10 pt-20  w-full text-center  text-8xl mt-10">Log in now.</p>
               </motion.div>
             </div>
 
@@ -158,40 +167,35 @@ const Home: NextPage = () => {
           </motion.div>
         </div >
         <div className="flex  w-full max-w-[120rem] mx-auto flex-col items-center justify-center py-2 min-h-screen">
-            <AnimatePresence>
-              <motion.p
-                whileHover={{ scale: 1.02 }}
-                initial={{ opacity: 0, translateX: 100 }}
-                animate={{ opacity: 1, translateX: 0 }}
-                exit={{ opacity: 0 }}
+          <AnimatePresence>
+            <motion.p
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, translateX: 100 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              exit={{ opacity: 0 }}
 
-                className="pt-10 cursor-default text-[#EEFBF8] font-['Inter'] text-8xl text-center">
-                Team
-              </motion.p>
-            </AnimatePresence>
-            <div className="gap-x-10 gap-y-4 w-full flex flex-wrap justify-center">
-              {/* {people.map((index, i) =>
+              className="pt-10 cursor-default text-[#EEFBF8] font-['Inter'] text-8xl text-center">
+              Team
+            </motion.p>
+          </AnimatePresence>
+          <div className="gap-x-10 gap-y-4 w-full flex flex-wrap justify-center">
+            {/* {people.map((index, i) =>
                   <TeamMember  name={index['name']} description={index['description']} image={index['description']} />
                 )
                 } */}
-              {/* <TeamMember  name={index[0]['name']} description={index[0]['description']} image={index[0]['description']} /> */}
+            {/* <TeamMember  name={index[0]['name']} description={index[0]['description']} image={index[0]['description']} /> */}
 
 
-              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
-              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+            <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+            <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
 
-              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
-
-            </div>
-
-            <Footer />
-
-          </div>
-          <div className="flex justify-center pt-10 h-screen bg-black">
+            <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
 
           </div>
 
+          <Footer />
 
+        </div>
       </div>
     </GoogleOAuthProvider>
   );
