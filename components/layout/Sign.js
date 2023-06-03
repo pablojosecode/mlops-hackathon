@@ -95,7 +95,7 @@ const Sign = ({ register }) => {
                     window.open("http://localhost:3000/User", "_self")
                 }
                 else {
-                    window.open("https://vocalaifrontend.vercel.app/User", "_self")
+                    window.open("https://mlops-hackathon-txt4.vercel.app/chat", "_self")
                 }
             }
         });
@@ -305,7 +305,7 @@ const Sign = ({ register }) => {
                                 window.open("http://localhost:3000/chat", "_self")
                             }
                             else {
-                                window.open("https://.vercel.app/chat", "_self")
+                                window.open("https://mlops-hackathon-txt4.vercel.app/chat", "_self")
                             }
                         }
                     });

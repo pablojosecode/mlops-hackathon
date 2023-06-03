@@ -32,7 +32,7 @@ const check = () => {
                         window.open("http://localhost:3000/chat", "_self")
                     }
                     else {
-                        window.open("https:///User", "_self")
+                        window.open("https://mlops-hackathon-txt4.vercel.app/chat", "_self")
                     }
                     console.log("FUCK SUCCESS")
                 }
