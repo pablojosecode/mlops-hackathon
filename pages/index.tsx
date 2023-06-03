@@ -9,6 +9,7 @@ import { Testimonials } from "../components/Testimonials";
 import { AnimatePresence, motion } from "framer-motion";
 import { DEPLOY_URL, FADE_DOWN_ANIMATION_VARIANTS, FADE_IN_ANIMATION_SETTINGS } from "@/lib/constants";
 import { useRef } from "react";
+import TeamMember from "@/components/TeamMember"
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { useEffect } from "react";
 import check from "@/components/Checks/check"
@@ -24,24 +25,37 @@ const Home: NextPage = () => {
   const { FaqModal, setShowFaqModal } = useFaqModal();
 
 
+  const people = [
+    {
+      "name": "Derrick",
+      "description": "CTO of Pathrise",
+      "image": "logo.png"
+    },
+    {
+      "name": "Pablo",
+      "description": "SWE manager at stealth startups",
+      "image": "logo.png"
+    },
+    {
+      "name": "Mumza",
+      "description": "SWE at Amazon- Alexa",
+      "image": "logo.png"
+    },
+    {
+      "name": "Keval",
+      "description": "Nvidia Engineer",
+      "image": "logo.png"
+    },
+
+
+  ]
+
 
   // useEffect(() => {
   //   // Your code here
   //   check();
 
   // }, []);
-  const teamMember = () => {
-    return (
-      <motion.div className="max-w-96 w-3/4 bg-black ">
-        <p className="pt-10 text-white text-center">
-          Derrick
-        </p>
-        <p>
-        </p>
-      </motion.div >
-
-    )
-  }
 
 
   return (
@@ -109,14 +123,17 @@ const Home: NextPage = () => {
 
             </div>
             <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-400 rounded-[20rem]">
-              <p className="text-center mt-10">Let's talk</p>
+              <p className="text-center mt-10">Log in now.</p>
             </motion.div>
             <div>
               <p className="font-['Inter'] text-center">
                 Team
               </p>
               <div className="flex flex-wrap justify-center">
-                {teamMember()}
+                {people.map(index =>
+                  <TeamMember name={index['name']} description={index['description']} image={index['description']} />
+                )
+                }
 
 
 
