@@ -17,7 +17,7 @@ const SignOut = () => {
         window.open("http://localhost:3000", "_self");
     }
     else{
-        window.open("https://vocalaifrontend.vercel.app", "_self")
+        window.open("https://mlops-hackathon-txt4.vercel.app/", "_self")
     }
 
 }

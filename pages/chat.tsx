@@ -29,7 +29,7 @@ const chat = () => {
         setWaiting(true)
         const question = ((document.querySelector(".question") as HTMLInputElement).value)
         const data = { "params": { "question": question }, "project": "9ce1c605b3d4-4c88-bc4c-77ef69dc4645" }
-        const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/88ea2304-19d3-4213-b2a3-96f1fc0706db/trigger_limited", {
+        const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/9a7a7986-81a5-4791-92bd-5522b444b60e/trigger_limited", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
