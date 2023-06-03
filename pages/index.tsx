@@ -158,9 +158,9 @@ const Home: NextPage = () => {
             <div className="flex justify-center pt-5 ">
               <motion.div
                 onClick={() => setShowSignInModal(true)}
-                whileHover={{ rotateX: 1, scale: 1.01 }} className="cursor-pointer flex h-[23rem] w-3/4 max-w-7xl bg-white rounded-[40rem]">
+                whileHover={{ rotateX: 1, scale: 1.2 }} className="my-20 py-12 px-10 cursor-pointer flex  max-w-7xl bg-slate-800 rounded-[40rem]">
 
-                <p className="my-auto px-10 pt-20  w-full text-center  text-8xl mt-10">Log in now.</p>
+                <p className="my-auto  font-['Inter'] text-white w-full text-center  text-7xl ">Join Us.</p>
               </motion.div>
             </div>
 

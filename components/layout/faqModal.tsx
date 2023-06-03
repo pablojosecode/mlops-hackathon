@@ -31,8 +31,8 @@ const FaqModal = ({
 
     return (
         <Modal showModal={showFaqModal} setShowModal={setShowFaqModal}>
-            <div className="font-serif dark:bg-slate-800 max-h-full w-full overflow-hidden shadow-xl md:max-w-2xl md:rounded-2xl  md:border-gray-200">
-                <div className="flex flex-col items-center justify-center space-y-3  dark:border-black border-gray-200 dark:bg-slate-800 bg-white  px-4 py-6 pt-8 text-center md:px-16">
+            <div className="font-serif bg-slate-800 max-h-full w-full overflow-hidden shadow-xl md:max-w-2xl md:rounded-2xl  md:border-gray-200">
+                <div className="flex flex-col items-center justify-center space-y-3  border-black border-gray-200 bg-slate-800 bg-white  px-4 py-6 pt-8 text-center md:px-16">
 
 
                     <h3 className="font-display text-white text-6xl sm:text-6xl font-bold">What is MLOPS?</h3>

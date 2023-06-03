@@ -15,11 +15,11 @@ const Sign = ({ register }) => {
     const Divider = ({ children }) => {
         return (
             <div className="flex align-middle justify-center">
-                <div className="m-auto w-full h-[.2rem] bg-black" />
+                <div className="m-auto w-full h-[.2rem] bg-white" />
                 <span className="px-5">
                     {children}
                 </span>
-                <div className="m-auto w-full h-[.2rem] bg-black" />
+                <div className="m-auto w-full h-[.2rem] bg-white" />
             </div>
         );
     };
@@ -345,10 +345,10 @@ const Sign = ({ register }) => {
                 <Divider>Or</Divider>
                 <div className='justify-center flex'>
                     <div className='w-full max-w-lg'>
-                        <p className="font-['Inter']">
+                        <p className="font-sans">
                             Email
                         </p>
-                        <input autocapitalize="none" type='text ' className="rounded-lg font-['Inter'] text-md w-full h-10 border-2 border-slate-300 text-black tempUser">
+                        <input autocapitalize="none" type='text ' className="rounded-lg border-slate-300 font-['Inter'] text-md w-full h-10 border-2 border-slate-300 text-black tempUser">
 
                         </input>
                         <p className="font-['Inter']">
@@ -376,20 +376,20 @@ const Sign = ({ register }) => {
                     <div className='justify-center flex'>
                         <div className='text-5xl sm:text-2xl w-full max-w-lg'>
 
-                            <p autocapitalize="none" className="font-['Inter']">
+                            <p autocapitalize="none" className="font-sans">
                                 Email
                             </p>
-                            <input type='text' className="font-['Inter'] sm:text-md  text-2xl w-full h-10 border-2 border-fuschia-900 text-black tempPass tempUser2">
+                            <input type='text' className="rounded-lg border-slate-300 font-['Inter'] sm:text-md  text-2xl w-full h-10 border-2 border-fuschia-900 text-black tempPass tempUser2">
 
                             </input>
                             <p className=" pt-5 sm:pt-0 font-['Inter']">
                                 Password
                             </p>
-                            <input type='password' className="font-['Inter'] sm:text-md text-2xl w-full h-10 border-2 border-fuschia-900 text-black tempPass tempPass2">
+                            <input type='password' className="rounded-lg border-slate-300 font-['Inter'] sm:text-md text-2xl w-full h-10 border-2 border-fuschia-900 text-black tempPass tempPass2">
 
                             </input>
                             <div className='w-full mt-4 sm:pt-0'>
-                                <button onClick={() => RegisterUser()} className="w-1/2 sm:h-20 text-3xl h-16 border-2 border-blue-800 bg-blue-400">
+                                <button onClick={() => RegisterUser()} className="w-1/2 sm:h-20 text-3xl h-16 border-2 rounded-lg border-slate-300 bg-blue-400">
                                     Register
                                 </button>
                             </div>
@@ -397,12 +397,12 @@ const Sign = ({ register }) => {
                             {submitted && <> <p className="pt-5 sm:pt-0 font-['Inter']">
                                 Verification Code
                             </p>
-                                <input placeholder='verification code' type='text' className="font-['Inter'] sm:text-md text-2xl w-full h-10 border-2 border-fuschia-900 text-black code">
+                                <input placeholder='verification code' type='text' className="font-['Inter'] sm:text-md text-2xl w-full h-10 border-2 rounded-lg border-slate-300 text-black code">
                                 </input>
                                 <div className='w-full pt-5 '>
 
 
-                                    <button onClick={() => ConfirmCode()} className="w-1/2 sm:h-20 text-3xl h-16 border-2 border-blue-800 bg-blue-400">
+                                    <button onClick={() => ConfirmCode()} className="w-1/2 sm:h-20 text-3xl h-16 border-2 rounded-lg border-slate-300 bg-blue-400">
                                         Verify
                                     </button>
                                 </div>

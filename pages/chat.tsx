@@ -16,12 +16,16 @@ const chat = () => {
     const [response, setResponse] = useState("")
 
     const [waiting, setWaiting] = useState(false)
+    const [thumbsUp, setThumbsUp] = useState(false)
+    const [thumbsDown, setThumbsDown] = useState(false)
 
     const { FaqModal, setShowFaqModal } = useFaqModal();
     const { SignInModal, setShowSignInModal } = useSignInModal();
     const { PricingModal, setShowPricingModal } = usePricingModal();
     const questions = ["MLOps", "Flying", "Lanugage Models", "Deployment"]
     const ask = async () => {
+        setThumbsUp(false);
+        setThumbsDown(false);
         setWaiting(true)
         const question = ((document.querySelector(".question") as HTMLInputElement).value)
         const data = { "params": { "question": question }, "project": "9ce1c605b3d4-4c88-bc4c-77ef69dc4645" }
@@ -38,6 +42,7 @@ const chat = () => {
         }).then(response =>
             response.json())
         console.log(Object.keys(response))
+        console.log(response)
         console.log(response[0])
         setResponse(response["output"]["answer"])
         setWaiting(false)
@@ -51,10 +56,8 @@ const chat = () => {
 
 
     return (
-
         <GoogleOAuthProvider clientId="45408313407-q6jsic6d271qhjh76t6rfpg8c3nljj9n.apps.googleusercontent.com">
-
-            < div className="relative w-screen dark:bg-[#080708] min-h-screen pb-10 ">
+            <div className="relative w-screen bg-[#080708] min-h-screen pb-10 ">
                 <div className=" flex w-3/4 max-w-[100rem] mx-auto flex-col items-center justify-center py-2 ">
                     <motion.div
                         className="w-full xl:px-0"
@@ -93,11 +96,32 @@ const chat = () => {
                                     </motion.button>
                                 </div>
                                 <div className="pt-10 flex justify-center ">
-                                    <div className="overflow-auto py-10 flex align-bottom items-end rounded-md h-96 w-4/5 bg-[#95F9E3] opacity-80">
-                                        <p className="align-bottom  h-full px-10 text-left">
-                                          {waiting ? "Loading..." : response}
-                                        </p>
+                                    <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#95F9E3] opacity-80">
+                                        <div className="h-96 flex justify-center">
+                                            <div className="w-4/5 overflow-auto">
+                                                <p className="align-bottom  h-full px-10 text-left">
+                                                    {waiting ? "Loading..." : response}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-center h-10 w-full ">
+                                            <div className="flex w-4/5 gap-x-10">
+                                                <div className={`${thumbsUp && " flex justify-center h-16 w-16 rounded-full bg-blue-200"}`}>
+                                                    <Image
+                                                        onClick={() => setThumbsUp(!thumbsUp)}
+                                                        className={` m-2  hover:h-12 hover:w-12 cursor-pointer h-10 my-auto w-10`} src="/up.png" height={200} width={200} alt="Thumbs up!" />
+                                                </div>
+                                                <div className={`${thumbsDown && "flex justify-center rounded-full h-16 w-16 bg-blue-200"}`}>
+
+                                                    <Image
+                                                        onClick={() => setThumbsDown(!thumbsDown)}
+                                                        className={`cursor-pointer h-10 w-10 hover:h-12 hover:w-12 cursor-pointer h-10 my-auto w-10`} src="/down.png" height={20} width={20} alt="Thumbs Down!" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div className="font-['Inter'] text-center text-white pt-10">
