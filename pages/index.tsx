@@ -95,9 +95,9 @@ const Home: NextPage = () => {
 
 
             </div>
-            <div className="h-screen bg-black">
-              <motion.div className="w-3/4 max-w-7xl bg-blue-200 rounded-[20rem]">
-                
+            <div className="flex justify-center pt-10 h-screen bg-black">
+              <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-400 rounded-[20rem]">
+                <p className="text-center mt-10">Let's talk</p>
               </motion.div>
             </div>
 
