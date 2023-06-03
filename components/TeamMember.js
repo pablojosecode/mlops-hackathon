@@ -4,24 +4,29 @@ import Image from "next/image";
 
 const TeamMember = (name, description, image, background) => {
     return (
-        <motion.div className={`max-w-96 w-3/4 bg-${background}`} >
+        <div className={` cursor-pointer max-w-96 w-1/3 bg-[#95F9E3]`} >
+            <div className="flex justify-center">
+                <p className="my-auto pt-10 text-black text-6xl text-center">
+                    Derrick
+                </p>
+            </div>
 
-            <p className="pt-10 text-white text-center">
-                {name}
+            <div className="flex justify-center">
+                <Image
+                    className="rounded-full w-44 h-44"
+                    src={`/${image}`}
+                    alt="profile photo"
+                    width={20}
+                    height={20}
+                />
+            </div>
+
+            <p className="text-center pb-10 text-3xl pt-20 ">
+                CTO at Pathrise
             </p>
-            <Image
-                className="rounded-md"
-                src={image}
-                alt="profile photo"
-                width={20}
-                height={20}
-            />
 
-            <motion.p>
-                {description}
-            </motion.p>
 
-        </motion.div >
+        </div >
 
     )
 }

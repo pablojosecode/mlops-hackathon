@@ -85,8 +85,8 @@ const Home: NextPage = () => {
   return (
     <GoogleOAuthProvider clientId="45408313407-q6jsic6d271qhjh76t6rfpg8c3nljj9n.apps.googleusercontent.com">
 
-      <div className="w-screen dark:bg-black pb-10 ">
-        <div className="flex  max-w-[100rem] mx-auto flex-col items-center justify-center py-2 min-h-screen">
+      <div className="w-screen dark:bg-[#080708] pb-10 ">
+        <div className="flex  max-w-[100rem] mx-auto flex-col items-center justify-center py-2 ">
           <motion.div
             className="max-w-full xl:px-0"
             initial="hidden"
@@ -146,45 +146,52 @@ const Home: NextPage = () => {
 
 
             </div>
-            <div className="flex justify-center pt-10 ">
-              <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-100 rounded-[40rem]">
+            <div className="flex justify-center pt-5 ">
+              <motion.div className="flex h-[23rem] w-3/4 max-w-7xl bg-blue-100 rounded-[40rem]">
 
-                <p className="text-center mt-10">Log in now.</p>
+                <p className="pt-20  w-full text-center  text-8xl mt-10">Log in now.</p>
               </motion.div>
             </div>
-            <div>
-              <AnimatePresence>
-                <motion.p
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, translateX: 100 }}
-                  animate={{ opacity: 1, translateX: 0 }}
-                  exit={{ opacity: 0 }}
 
-                  className="pt-20 scursor-default text-white font-['Inter'] text-8xl text-center">
-                  Team
-                </motion.p>
-              </AnimatePresence>
-              <div className="flex flex-wrap justify-center">
-                {/* {people.map((index, i) =>
+
+
+          </motion.div>
+        </div >
+        <div className="flex  w-full max-w-[120rem] mx-auto flex-col items-center justify-center py-2 min-h-screen">
+            <AnimatePresence>
+              <motion.p
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, translateX: 100 }}
+                animate={{ opacity: 1, translateX: 0 }}
+                exit={{ opacity: 0 }}
+
+                className="pt-10 cursor-default text-[#EEFBF8] font-['Inter'] text-8xl text-center">
+                Team
+              </motion.p>
+            </AnimatePresence>
+            <div className="gap-x-10 gap-y-4 w-full flex flex-wrap justify-center">
+              {/* {people.map((index, i) =>
                   <TeamMember  name={index['name']} description={index['description']} image={index['description']} />
                 )
                 } */}
-                {/* <TeamMember  name={index[0]['name']} description={index[0]['description']} image={index[0]['description']} /> */}
+              {/* <TeamMember  name={index[0]['name']} description={index[0]['description']} image={index[0]['description']} /> */}
 
 
-                <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="/derrick.png" />
-              </div>
+              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+
+              <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
 
             </div>
-            <div className="flex justify-center pt-10 h-screen bg-black">
-
-            </div>
-
-
 
             <Footer />
-          </motion.div>
-        </div >
+
+          </div>
+          <div className="flex justify-center pt-10 h-screen bg-black">
+
+          </div>
+
+
       </div>
     </GoogleOAuthProvider>
   );
