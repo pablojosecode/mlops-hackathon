@@ -10,7 +10,7 @@ export default function Footer() {
           target="_blank"
           className="font-bold transition hover:text-black/50"
         >
-          Pablo {" "}
+          the team {" "}
         </a>
       </div>
 

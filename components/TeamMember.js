@@ -10,10 +10,13 @@ const TeamMember = (name, description, image, background) => {
                 {name}
             </p>
             <Image
-            src=
+                className="rounded-md"
+                src={image}
+                alt="profile photo"
+                width={20}
+                height={20}
             />
 
-            </Image>
             <motion.p>
                 {description}
             </motion.p>

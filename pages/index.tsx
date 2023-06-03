@@ -29,22 +29,46 @@ const Home: NextPage = () => {
     {
       "name": "Derrick",
       "description": "CTO of Pathrise",
-      "image": "logo.png"
+      "image": "derrick.png"
     },
     {
       "name": "Pablo",
       "description": "SWE manager at stealth startups",
-      "image": "logo.png"
+      "image": "pablo.png"
     },
     {
       "name": "Mumza",
       "description": "SWE at Amazon- Alexa",
-      "image": "logo.png"
+      "image": "hamza.jpeg"
     },
     {
       "name": "Keval",
       "description": "Nvidia Engineer",
-      "image": "logo.png"
+      "image": "keval.jpeg"
+    },
+
+
+  ]
+  const index = [
+    {
+      "name": "Derrick",
+      "description": "CTO of Pathrise",
+      "image": "derrick.png"
+    },
+    {
+      "name": "Pablo",
+      "description": "SWE manager at stealth startups",
+      "image": "pablo.png"
+    },
+    {
+      "name": "Mumza",
+      "description": "SWE at Amazon- Alexa",
+      "image": "hamza.jpeg"
+    },
+    {
+      "name": "Keval",
+      "description": "Nvidia Engineer",
+      "image": "keval.jpeg"
     },
 
 
@@ -122,21 +146,33 @@ const Home: NextPage = () => {
 
 
             </div>
-            <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-400 rounded-[20rem]">
-              <p className="text-center mt-10">Log in now.</p>
-            </motion.div>
+            <div className="flex justify-center pt-10 ">
+              <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-100 rounded-[40rem]">
+
+                <p className="text-center mt-10">Log in now.</p>
+              </motion.div>
+            </div>
             <div>
-              <p className="font-['Inter'] text-center">
-                Team
-              </p>
+              <AnimatePresence>
+                <motion.p
+                  whileHover={{ scale: 1.02 }}
+                  initial={{ opacity: 0, translateX: 100 }}
+                  animate={{ opacity: 1, translateX: 0 }}
+                  exit={{ opacity: 0 }}
+
+                  className="pt-20 scursor-default text-white font-['Inter'] text-8xl text-center">
+                  Team
+                </motion.p>
+              </AnimatePresence>
               <div className="flex flex-wrap justify-center">
-                {people.map(index =>
-                  <TeamMember name={index['name']} description={index['description']} image={index['description']} />
+                {/* {people.map((index, i) =>
+                  <TeamMember  name={index['name']} description={index['description']} image={index['description']} />
                 )
-                }
+                } */}
+                {/* <TeamMember  name={index[0]['name']} description={index[0]['description']} image={index[0]['description']} /> */}
 
 
-
+                <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="/derrick.png" />
               </div>
 
             </div>
