@@ -14,11 +14,15 @@ import { authOptions } from './api/auth/[...nextauth]';
 import { useState } from "react";
 const chat = () => {
     const [response, setResponse] = useState("")
+
+    const [waiting, setWaiting] = useState(false)
+
     const { FaqModal, setShowFaqModal } = useFaqModal();
     const { SignInModal, setShowSignInModal } = useSignInModal();
     const { PricingModal, setShowPricingModal } = usePricingModal();
     const questions = ["MLOps", "Flying", "Lanugage Models", "Deployment"]
     const ask = async () => {
+        setWaiting(true)
         const question = ((document.querySelector(".question") as HTMLInputElement).value)
         const data = { "params": { "question": question }, "project": "9ce1c605b3d4-4c88-bc4c-77ef69dc4645" }
         const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/88ea2304-19d3-4213-b2a3-96f1fc0706db/trigger_limited", {
@@ -36,6 +40,7 @@ const chat = () => {
         console.log(Object.keys(response))
         console.log(response[0])
         setResponse(response["output"]["answer"])
+        setWaiting(false)
         console.log(response["output"]["answer"])
         console.log(response["0"])
 
@@ -88,9 +93,9 @@ const chat = () => {
                                     </motion.button>
                                 </div>
                                 <div className="pt-10 flex justify-center ">
-                                    <div className="overflow-auto flex align-bottom items-end rounded-md h-96 w-4/5 bg-[#95F9E3] opacity-80">
-                                        <p className="align-bottom py-10 h-full px-10 text-left">
-                                            {response}
+                                    <div className="overflow-auto py-10 flex align-bottom items-end rounded-md h-96 w-4/5 bg-[#95F9E3] opacity-80">
+                                        <p className="align-bottom  h-full px-10 text-left">
+                                          {waiting ? "Loading..." : response}
                                         </p>
                                     </div>
                                 </div>

@@ -10,6 +10,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { DEPLOY_URL, FADE_DOWN_ANIMATION_VARIANTS, FADE_IN_ANIMATION_SETTINGS } from "@/lib/constants";
 import { useRef } from "react";
 import TeamMember from "@/components/TeamMember"
+import TeamMember2 from "@/components/TeamMember2"
+import TeamMember3 from "@/components/TeamMember3"
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { useEffect } from "react";
 import check from "@/components/Checks/check"
@@ -187,9 +189,9 @@ const Home: NextPage = () => {
 
 
             <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
-            <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+            <TeamMember2 name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
 
-            <TeamMember name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
+            <TeamMember3 name="Derrick" description="Cofounder + CTO of Pathrise" image="derrick.png" />
 
           </div>
 
