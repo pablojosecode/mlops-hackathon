@@ -11,8 +11,9 @@ import { useSignInModal } from "@/components/layout/sign-in-modal";
 import { usePricingModal } from "@/components/layout/pricingModal";
 import Chats from "@/components/Chats"
 import { authOptions } from './api/auth/[...nextauth]';
-
+import { useState } from "react";
 const chat = () => {
+    const [response, setResponse] = useState("")
     const { FaqModal, setShowFaqModal } = useFaqModal();
     const { SignInModal, setShowSignInModal } = useSignInModal();
     const { PricingModal, setShowPricingModal } = usePricingModal();
@@ -32,8 +33,13 @@ const chat = () => {
             body: JSON.stringify(data) // body data type must match "Content-Type" header
         }).then(response =>
             response.json())
+        console.log(Object.keys(response))
+        console.log(response[0])
+        setResponse(response["output"]["answer"])
+        console.log(response["output"]["answer"])
+        console.log(response["0"])
 
-        console.log(response);
+        console.log(response['output']);
 
 
     }
@@ -70,7 +76,7 @@ const chat = () => {
                         <div className="w-full pt-20 grid grid-cols-3">
                             <div className="col-span-2 pt-10 ">
                                 <div className="flex justify-center relative">
-                                    <input className="font-['Inter']w-4/5 rounded-md px-4 text-4xl text-left col-span-2 question" type="text" placeholder="Ask questions here..." />
+                                    <input className="font-['Inter'] w-4/5 rounded-md px-4 text-4xl text-left col-span-2 question" type="text" placeholder="Ask questions here..." />
                                     {/* <svg className="absolute top-2 right-" xmlns="http://www.w3.org/2000/svg" fill="black" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50">
                                         <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
                                     </svg> */}
@@ -82,9 +88,9 @@ const chat = () => {
                                     </motion.button>
                                 </div>
                                 <div className="pt-10 flex justify-center ">
-                                    <div className="flex align-bottom items-end rounded-md h-96 w-4/5 bg-[#95F9E3] opacity-80">
-                                        <p className="align-bottom h-full px-10 text-left">
-                                            Exactly the right thing
+                                    <div className="overflow-auto flex align-bottom items-end rounded-md h-96 w-4/5 bg-[#95F9E3] opacity-80">
+                                        <p className="align-bottom py-10 h-full px-10 text-left">
+                                            {response}
                                         </p>
                                     </div>
                                 </div>
