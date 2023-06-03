@@ -25,11 +25,24 @@ const Home: NextPage = () => {
 
 
 
-  useEffect(() => {
-    // Your code here
-    check();
+  // useEffect(() => {
+  //   // Your code here
+  //   check();
 
-  }, []);
+  // }, []);
+  const teamMember = () => {
+    return (
+      <motion.div className="max-w-96 w-3/4 bg-black ">
+        <p className="pt-10 text-white text-center">
+          Derrick
+        </p>
+        <p>
+        </p>
+      </motion.div >
+
+    )
+  }
+
 
   return (
     <GoogleOAuthProvider clientId="45408313407-q6jsic6d271qhjh76t6rfpg8c3nljj9n.apps.googleusercontent.com">
@@ -95,11 +108,26 @@ const Home: NextPage = () => {
 
 
             </div>
-            <div className="flex justify-center pt-10 h-screen bg-black">
-              <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-400 rounded-[20rem]">
-                <p className="text-center mt-10">Let's talk</p>
-              </motion.div>
+            <motion.div className="h-[23rem] w-3/4 max-w-7xl bg-blue-400 rounded-[20rem]">
+              <p className="text-center mt-10">Let's talk</p>
+            </motion.div>
+            <div>
+              <p className="font-['Inter'] text-center">
+                Team
+              </p>
+              <div className="flex flex-wrap justify-center">
+                {teamMember()}
+
+
+
+              </div>
+
             </div>
+            <div className="flex justify-center pt-10 h-screen bg-black">
+
+            </div>
+
+
 
             <Footer />
           </motion.div>
