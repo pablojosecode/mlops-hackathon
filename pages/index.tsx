@@ -141,7 +141,7 @@ const Home: NextPage = () => {
                 <motion.h1
                   whileHover={{ scale: 1.01 }}
                   className="cursor-default mx-auto w-full font-['Inter'] max-w-6xl font-display text-7xl font-bold tracking-normal text-slate-900 dark:text-slate-100 sm:text-9xl">
-                  Learn MLOps with <span className="underline">proficient AI</span>
+                  Learn MLOps with <span className="underline">Stephen</span>
 
                 </motion.h1>
               </motion.div>
