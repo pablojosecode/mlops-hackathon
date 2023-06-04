@@ -1,4 +1,4 @@
-# MLOPS Hackathon
+# MLOPS Hackathon - STEPHEN
 
 This is some of the source code for a project built for the fantastic MLOPS commmunity- https://mlops-hackathon-txt4.vercel.app/. It teaches you all about the community adn MLOps more generally through the friendly voice of Stephen!
 
