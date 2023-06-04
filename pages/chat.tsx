@@ -99,6 +99,7 @@ const chat = () => {
                         {/* <Buy /> */}
 
                         <Head>
+                            <link rel="shortcut icon" href="/favicon.ico" />
                             <title className="font-['Inter']">Stephen</title>
                         </Head>
 
