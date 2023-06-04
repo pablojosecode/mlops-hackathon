@@ -22,7 +22,7 @@ const chat = () => {
     const { FaqModal, setShowFaqModal } = useFaqModal();
     const { SignInModal, setShowSignInModal } = useSignInModal();
     const { PricingModal, setShowPricingModal } = usePricingModal();
-    const questions = ["MLOps", "Flying", "Lanugage Models", "Deployment"]
+    const questions = ["What is MLOps?", "What are the main components of a successful MLOps strategy?", "How does MLOps differ from DevOps?", "Can you explain the role of CI/CD in MLOps?"]
     const ask = async () => {
         setThumbsUp(false);
         setThumbsDown(false);
@@ -131,11 +131,14 @@ const chat = () => {
                                     {questions.map(question =>
                                         <motion.div
                                             whileHover={{ scale: 1.02 }}
-                                            className="active:text-blue-300 cursor-pointer m-3 text-6xl border-2 rounded-xl border-blue-200 text-blue-200">
+                                            onClick={() => {
+                                                const questionInput = (document.querySelector(".question") as HTMLInputElement);
+                                                // set the question's value to the question that was clicked
+                                                questionInput.value = question;
+                                            }}
+                                            className="active:text-blue-300 cursor-pointer m-3 text-4xl border-2 rounded-xl border-blue-200 text-blue-200">
                                             {question}
                                         </motion.div>
-
-
                                     )}
 
                                 </div>
