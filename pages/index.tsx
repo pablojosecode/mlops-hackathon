@@ -113,8 +113,8 @@ const Home: NextPage = () => {
             <FaqModal />
             <Image
               alt="robot clipart"
-              height={100}
-              width={100}
+              height={1000}
+              width={1000}
               className="absolute z-0 h-[30rem] w-[30rem] left-96 top-72"
               src="/clipart.png"
             />
@@ -158,7 +158,8 @@ const Home: NextPage = () => {
             <div className="flex justify-center pt-5 ">
               <motion.div
                 onClick={() => setShowSignInModal(true)}
-                whileHover={{ rotateX: 1, scale: 1.2 }} className="my-20 py-12 px-10 cursor-pointer flex  max-w-7xl bg-slate-800 rounded-[40rem]">
+                whileTap={{scale:.99}}
+                whileHover={{ rotateX: 1, scale: 1.1}} className="hover:bg-[#C3F7C2]    active:bg-[#0ADD08] my-20 py-12 px-10 cursor-pointer flex  max-w-7xl bg-slate-800 rounded-[40rem]">
 
                 <p className="my-auto  font-['Inter'] text-white w-full text-center  text-7xl ">Join Us.</p>
               </motion.div>
@@ -180,7 +181,7 @@ const Home: NextPage = () => {
               Team
             </motion.p>
           </AnimatePresence>
-          <div className="gap-x-10 gap-y-4 w-full flex flex-wrap justify-center">
+          <div className="pt-12 gap-x-10 gap-y-4 w-full flex flex-wrap justify-center">
             {/* {people.map((index, i) =>
                   <TeamMember  name={index['name']} description={index['description']} image={index['description']} />
                 )

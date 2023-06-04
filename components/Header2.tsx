@@ -26,7 +26,7 @@ export default function Header2({ photo }: { photo?: string | undefined }) {
       </Link>
       
       <motion.button
-        className="rounded-full font-['Inter'] text-3xl border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white dark:border-white hover:text-black"
+        className="rounded-full font-['Inter'] text-3xl border border-black bg-black p-1.5 px-4  text-white transition-all hover:bg-white dark:border-white hover:text-black"
         onClick={() => SignOut()}
         {...FADE_IN_ANIMATION_SETTINGS}
       >

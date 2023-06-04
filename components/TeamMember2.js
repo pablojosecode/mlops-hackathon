@@ -6,7 +6,7 @@ const TeamMember2 = (name, description, image, background) => {
     return (
         <motion.div
             whileHover={{ rotateX: 10, rotateY:10 }}
-            className={`hover:shadow-2xl  shadow-white opacity-80 rounded-2xl cursor-pointer max-w-96 w-1/3 bg-[#95F9E3]`} >
+            className={`hover:shadow-2xl  shadow-white opacity-80 rounded-2xl cursor-pointer max-w-96 w-1/3 hover:shadow-[#437942] hover:shadow-[#437942] bg-[#437942]`} >
             <div className="flex justify-center">
                 <p className="my-auto pt-10 text-black text-6xl text-center">
                     Hamza Owais

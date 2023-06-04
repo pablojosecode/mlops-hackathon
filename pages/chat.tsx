@@ -75,7 +75,6 @@ const chat = () => {
                         }}>
                         {/* <Buy /> */}
 
-
                         <Head>
                             <title className="font-['Atma']"></title>
                         </Head>
@@ -96,8 +95,8 @@ const chat = () => {
                                     </motion.button>
                                 </div>
                                 <div className="pt-10 flex justify-center ">
-                                    <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#95F9E3] opacity-80">
-                                        <div className="h-96 flex justify-center">
+                                    <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#437942] opacity-80">
+                                        <div className="h-[20rem] flex justify-center">
                                             <div className="w-4/5 overflow-auto">
                                                 <p className="align-bottom  h-full px-10 text-left">
                                                     {waiting ? "Loading..." : response}
@@ -147,6 +146,10 @@ const chat = () => {
                                 {/* <Chats /> 
 
                     </div>  */}
+                        </div>
+                        <div className="flex flex-wrap w-full bg-white ">
+
+                            
                         </div>
                         <div className="pt-10 flex justify-center">
                             <div className="grid grid-cols-5 gap-x-10 w-1/2 bg-slate-200 ">
