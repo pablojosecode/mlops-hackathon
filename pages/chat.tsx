@@ -97,7 +97,7 @@ const chat = () => {
                         {/* <Buy /> */}
 
                         <Head>
-                            <title className="font-['Atma']"></title>
+                            <title className="font-['Inter']">Stephen</title>
                         </Head>
 
                         <Header2 />
