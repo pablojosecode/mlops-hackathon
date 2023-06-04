@@ -17,6 +17,7 @@ Derrick Mar (CPO at Pathrise)- https://www.linkedin.com/in/derrick-mar/
 Hamza Owais (SDE II at Amazon)- https://www.linkedin.com/in/hamzaowais/
 
 Keval Morabia (Senior DLE at Nvidia)- https://www.linkedin.com/in/kevalmorabia97/
+![team](https://github.com/pablojosecode/mlops-hackathon/assets/92952901/ef481424-ab1d-4ac1-a472-c50560313629)
 
 ## Backend
 
