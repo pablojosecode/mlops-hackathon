@@ -14,7 +14,7 @@ import { authOptions } from './api/auth/[...nextauth]';
 import { useState } from "react";
 const chat = () => {
     const [response, setResponse] = useState("")
-    const [references, setReferences] = useState(false)
+    const [references, setReferences] = useState(true)
     const [citations, setCitations] = useState(
         []
     )
@@ -36,9 +36,13 @@ const chat = () => {
 
     const ask = async () => {
         setThumbsUp(false);
+
         setThumbsDown(false);
+
         setWaiting(true);
-        setReferences(false);
+
+        setReferences(true);
+
         const question = ((document.querySelector(".question") as HTMLInputElement).value)
         const data = { "params": { "question": question }, "project": "9ce1c605b3d4-4c88-bc4c-77ef69dc4645" }
         const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/1cc75ca1-b9f0-4a41-a105-502c5bafec61/trigger_limited", {
@@ -71,8 +75,6 @@ const chat = () => {
         setResponse(response["output"]["answer"]["answer"])
         setWaiting(false)
 
-
-
     }
 
 
@@ -101,6 +103,10 @@ const chat = () => {
                         </Head>
 
                         <Header2 />
+                    </motion.div>
+                </div>
+                <div className="flex w-4/5 max-w-[150rem] mx-auto flex-col items-center justify-center py-2">
+                    <motion.div>
                         <div className="w-full pt-20 grid grid-cols-3">
                             <div className="col-span-2 pt-10 ">
                                 <div className="flex justify-center relative">
@@ -118,7 +124,7 @@ const chat = () => {
                                 <div className="pt-10 flex justify-center ">
                                     <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#437942] opacity-80">
                                         <div className="h-[20rem] flex justify-center">
-                                            <div className="w-4/5 overflow-auto">
+                                            <div className=" overflow-auto">
                                                 <p className="align-bottom  h-full px-10 text-left">
                                                     {waiting ? "Loading..." : response}
                                                 </p>
@@ -208,6 +214,7 @@ const chat = () => {
                             </div>
                         </div>
                     </motion.div>
+
                 </div>
             </div >
         </GoogleOAuthProvider >
