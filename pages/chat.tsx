@@ -11,8 +11,19 @@ import { useSignInModal } from "@/components/layout/sign-in-modal";
 import { usePricingModal } from "@/components/layout/pricingModal";
 import Chats from "@/components/Chats"
 import { authOptions } from './api/auth/[...nextauth]';
+import { useEffect } from "react";
+import check2 from "@/components/Checks/check2";
+
 import { useState } from "react";
+import LoadingDots from "@/components/LoadingDots";
 const chat = () => {
+
+    useEffect(() => {
+        // Your code here
+        check2();
+
+    }, []);
+
     const [response, setResponse] = useState("")
     const [references, setReferences] = useState(true)
     const [citations, setCitations] = useState(
@@ -82,6 +93,7 @@ const chat = () => {
         <GoogleOAuthProvider clientId="45408313407-q6jsic6d271qhjh76t6rfpg8c3nljj9n.apps.googleusercontent.com">
             <div className="relative w-screen bg-[#080708] min-h-screen pb-10 ">
                 <div className=" flex w-3/4 max-w-[100rem] mx-auto flex-col items-center justify-center py-2 ">
+
                     <motion.div
                         className="w-full xl:px-0"
                         initial="hidden"
@@ -123,11 +135,11 @@ const chat = () => {
                                     </motion.button>
                                 </div>
                                 <div className="pt-10 flex justify-center ">
-                                    <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#437942] opacity-80">
+                                    <div className=" py-10  align-bottom items-end rounded-md  w-4/5 bg-[#CAF9EE] opacity-80">
                                         <div className="h-[20rem] flex justify-center">
                                             <div className=" overflow-auto">
                                                 <p className="align-bottom  h-full px-10 text-left">
-                                                    {waiting ? "Loading..." : response}
+                                                    {waiting ? <LoadingDots color="black" /> : response}
                                                 </p>
                                             </div>
                                         </div>

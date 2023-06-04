@@ -7,7 +7,7 @@ const TeamMember = (name, description, image, background) => {
         <motion.div
         onClick={() => window.open("https://www.linkedin.com/in/pablo-hansen/", "_blank")}
         whileHover={{ rotateX: -10, rotateY:15 }}
-        className={` cursor-pointer max-w-96 w-1/3 opacity-80 hover:shadow-[#437942] bg-[#437942] hover:shadow-2xl rounded-2xl `} >
+        className={` cursor-pointer max-w-96 w-1/3 opacity-80 hover:shadow-[#437942] bg-[#95F9E3] hover:shadow-2xl rounded-2xl `} >
             <div className="flex justify-center">
                 <p className="my-auto pt-10 font-bold pb-5 text-black text-6xl text-center">
                     Pablo Hansen

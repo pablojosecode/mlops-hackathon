@@ -162,7 +162,7 @@ const Home: NextPage = () => {
                 whileTap={{ scale: .99 }}
                 whileHover={{ rotateX: 1, scale: 1.1 }} className="hover:bg-[#C3F7C2]   my-20 py-12 px-10 cursor-pointer flex  max-w-7xl bg-slate-800 rounded-[40rem]">
 
-                <p className="my-auto  font-['Inter'] text-white w-full text-center  text-7xl ">Join Us.</p>
+                <p className="my-auto  font-['Inter'] hover:text-black text-white w-full text-center  text-7xl ">Join Us.</p>
               </motion.div>
             </div>
 
