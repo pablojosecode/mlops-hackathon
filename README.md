@@ -8,6 +8,13 @@ Dummy credentials
 - Email: pablosfsanchez@gmail.com
 - Password: Ppablosfsanchez@gmail.com1
 
+## Team
+
+Pablo Hansen (Software at Health Stealth)- https://www.linkedin.com/in/pablo-hansen/
+Derrick Mar (CPO at Pathrise)- https://www.linkedin.com/in/derrick-mar/
+Hamza Owais (SDE II at Amazon)- https://www.linkedin.com/in/hamzaowais/
+Keval Morabia (Senior DLE at Nvidia)- https://www.linkedin.com/in/kevalmorabia97/
+
 ## Backend
 
 The backend was built using Relevance AI- https://relevanceai.com and Redis - https://redis.com/. Feel free to reach out to learn more- both are amazing tools!
