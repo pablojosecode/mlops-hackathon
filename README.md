@@ -11,8 +11,11 @@ Dummy credentials
 ## Team
 
 Pablo Hansen (Software at Health Stealth)- https://www.linkedin.com/in/pablo-hansen/
+
 Derrick Mar (CPO at Pathrise)- https://www.linkedin.com/in/derrick-mar/
+
 Hamza Owais (SDE II at Amazon)- https://www.linkedin.com/in/hamzaowais/
+
 Keval Morabia (Senior DLE at Nvidia)- https://www.linkedin.com/in/kevalmorabia97/
 
 ## Backend
