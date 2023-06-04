@@ -14,22 +14,34 @@ import { authOptions } from './api/auth/[...nextauth]';
 import { useState } from "react";
 const chat = () => {
     const [response, setResponse] = useState("")
+    const [references, setReferences] = useState(false)
+    const [citations, setCitations] = useState(
+        []
+    )
 
     const [waiting, setWaiting] = useState(false)
     const [thumbsUp, setThumbsUp] = useState(false)
     const [thumbsDown, setThumbsDown] = useState(false)
-
     const { FaqModal, setShowFaqModal } = useFaqModal();
     const { SignInModal, setShowSignInModal } = useSignInModal();
     const { PricingModal, setShowPricingModal } = usePricingModal();
-    const questions = ["MLOps", "Flying", "Lanugage Models", "Deployment"]
+    const questions = ["What is MLOps?", "What are the main components of a successful MLOps strategy?", "How does MLOps differ from DevOps?", "Can you explain the role of CI/CD in MLOps?"]
+
+    const substitute = {
+        "MLOps": "What is MLOps used for?",
+        "Flying": "What is the best dragon to fly?",
+        "Language Models": "What are language models useful for?",
+        "Deployment": "What is a good path to deplying machine learning language models?"
+    }
+
     const ask = async () => {
         setThumbsUp(false);
         setThumbsDown(false);
-        setWaiting(true)
+        setWaiting(true);
+        setReferences(false);
         const question = ((document.querySelector(".question") as HTMLInputElement).value)
         const data = { "params": { "question": question }, "project": "9ce1c605b3d4-4c88-bc4c-77ef69dc4645" }
-        const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/9a7a7986-81a5-4791-92bd-5522b444b60e/trigger_limited", {
+        const response = await fetch("https://api-bcbe5a.stack.tryrelevance.com/latest/studios/1cc75ca1-b9f0-4a41-a105-502c5bafec61/trigger_limited", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -41,15 +53,24 @@ const chat = () => {
             body: JSON.stringify(data) // body data type must match "Content-Type" header
         }).then(response =>
             response.json())
-        console.log(Object.keys(response))
-        console.log(response)
-        console.log(response[0])
-        setResponse(response["output"]["answer"])
-        setWaiting(false)
-        console.log(response["output"]["answer"])
-        console.log(response["0"])
+        console.log
+        console.log(Object.keys(response["output"]))
+        // console.log(response)
+        // console.log(response[0])
 
-        console.log(response['output']);
+
+        const context = response["output"]["answer"]["context"]
+        setCitations(context)
+
+
+
+        console.log(response["output"]["answer"]["context"])
+        // console.log(response["0"])
+
+        console.log(response['output']['answer']);
+        setResponse(response["output"]["answer"]["answer"])
+        setWaiting(false)
+
 
 
     }
@@ -122,6 +143,25 @@ const chat = () => {
                                     </div>
 
                                 </div>
+                                <div className="pt-10 flex justify-center">
+                                    <motion.button
+                                        onClick={() => setReferences(!references)}
+                                        className="text-center p-5 bg-green-200">
+                                        References
+                                    </motion.button>
+                                </div>
+                                {
+                                    references &&
+                                    <div className="cursor-default flex justify-center flex-wrap w-full ">
+
+                                        {Object.keys(citations).map((citation: any) =>
+                                            <motion.div
+                                                whileHover={{ rotateX: 20 }}
+                                                className="w-64 rounded-2xl bg-slate-200 m-10 p-4 font-['Inter']  ">
+                                                {citations[citation]}
+                                            </motion.div>)}
+                                    </div>
+                                }
                             </div>
                             <div className="font-['Inter'] text-center text-white pt-10">
                                 <p className="text-5xl cursor-default w-full  pb-4 ">
@@ -131,13 +171,15 @@ const chat = () => {
                                     {questions.map(question =>
                                         <motion.div
                                             whileHover={{ scale: 1.02 }}
-                                            className="active:text-blue-300 cursor-pointer m-3 text-6xl border-2 rounded-xl border-blue-200 text-blue-200">
+                                            onClick={() => {
+                                                const questionInput = (document.querySelector(".question") as HTMLInputElement);
+                                                // set the question's value to the question that was clicked
+                                                questionInput.value = question;
+                                            }}
+                                            className="active:text-blue-300 cursor-pointer m-3 text-4xl border-2 rounded-xl border-blue-200 text-blue-200">
                                             {question}
                                         </motion.div>
-
-
                                     )}
-
                                 </div>
                             </div>
                             {/* <div className="h-[s25rem] w-4/5 max-w-3xl bg-blue-800">
@@ -147,10 +189,7 @@ const chat = () => {
 
                     </div>  */}
                         </div>
-                        <div className="flex flex-wrap w-full bg-white ">
 
-                            
-                        </div>
                         <div className="pt-10 flex justify-center">
                             <div className="grid grid-cols-5 gap-x-10 w-1/2 bg-slate-200 ">
                                 <Image src="/pfp.png" height={100} width={100} alt="pfp" />

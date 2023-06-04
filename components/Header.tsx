@@ -37,7 +37,7 @@ export default function Header(
           height={50}
         /> */}
         <h1 className="align-center sm:text-4xl text-2xl font-bold ml-2 tracking-tight">
-          AI ANSWERS
+          Stephen AI
         </h1>
       </Link>
       {/* <motion.button

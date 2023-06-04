@@ -21,10 +21,10 @@ export default function Header2({ photo }: { photo?: string | undefined }) {
           height={25}
         />
         <h1 className="sm:text-4xl text-2xl font-bold ml-2 tracking-tight">
-           AI
+          Stephen AI
         </h1>
       </Link>
-      
+
       <motion.button
         className="rounded-full font-['Inter'] text-3xl border border-black bg-black p-1.5 px-4  text-white transition-all hover:bg-white dark:border-white hover:text-black"
         onClick={() => SignOut()}
